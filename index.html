@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#234B3A">
+<title>오늘도 읽기</title><link rel="stylesheet" href="styles.css">
+</head><body><main class="app">
+<header><div><small>나의 독서 습관</small><h1>오늘도 읽기</h1></div><div class="streak">🔥 <b id="streak">0</b>일 연속</div></header>
+<section id="empty" class="hero"><div><small>오늘 한 페이지면 충분해요.</small><h2>지금 읽는 책을<br>등록해 보세요.</h2><button id="addBook">+ 읽는 책 등록</button></div><div class="bookshape">BOOK</div></section>
+<section id="reading" class="hide"><div class="section-title"><h2>지금 읽는 책</h2><button id="editBook" class="link">책 수정</button></div><article class="bookcard"><div class="coverbox"><img id="cover" class="hide"><div id="coverEmpty">표지</div></div><div><span class="badge">읽는 중</span><h3 id="title"></h3><p id="author"></p><div class="track"><i id="bar"></i></div><small><span id="page"></span> / <span id="total"></span>쪽 · <b id="percent"></b></small></div></article><button id="addLog" class="today"><span><small>오늘도 조금 읽었나요?</small><b>오늘 독서 기록하기</b></span><b>→</b></button></section>
+<section><div class="section-title"><h2>최근 기록</h2></div><div id="logs" class="logs"></div></section>
+</main>
+<dialog id="bookDlg"><form id="bookForm"><div class="handle"></div><div class="dlghead"><h2>읽는 책 등록</h2><button type="button" data-close="bookDlg">✕</button></div><label class="upload"><input id="coverInput" type="file" accept="image/*"><div><img id="preview" class="hide"><span id="previewText">📷<br>표지 이미지 추가</span></div></label><label>책 제목<input id="titleInput" required placeholder="예: 모순"></label><label>저자<input id="authorInput" placeholder="예: 양귀자"></label><div class="cols"><label>현재 페이지<input id="pageInput" type="number" min="0" value="0"></label><label>전체 페이지<input id="totalInput" type="number" min="1" placeholder="308"></label></div><button class="primary">저장하기</button></form></dialog>
+<dialog id="logDlg"><form id="logForm"><div class="handle"></div><div class="dlghead"><h2>오늘 독서 기록</h2><button type="button" data-close="logDlg">✕</button></div><p id="logTitle" class="logtitle"></p><label>오늘 어디까지 읽었나요?<input id="logPage" type="number" min="0"></label><label>오늘의 한 줄<textarea id="note" rows="4" maxlength="180" placeholder="마음에 남은 문장이나 오늘의 생각"></textarea></label><button class="primary">오늘 기록 저장</button><p class="tip">길게 쓰지 않아도 괜찮아요. 읽었다는 흔적만 남기면 됩니다.</p></form></dialog>
+<script src="app.js"></script></body></html>
